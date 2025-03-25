@@ -48,6 +48,9 @@ RUN apt update && apt install -y \
 COPY --from=builder /app/build /app/build
 COPY --from=builder /app/wrapper /app/wrapper
 
+# Copy source code
+COPY . /app
+
 # Set args environment variable
 ENV args ""
 
